@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '4.0.1'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+description = 'car-management-backend'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    // Spring Boot Web Starter (includes Tomcat and servlet support)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Jackson for JSON serialization (ObjectMapper)
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+    // Spring Boot Starter Tomcat (for servlet support)
+    implementation 'org.springframework.boot:spring-boot-starter-tomcat'
+
+    // Test dependencies
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

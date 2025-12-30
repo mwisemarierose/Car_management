@@ -1,8 +1,8 @@
-package com.example.carmanagementbackend.service;
+package com.example.carmanagement.service;
 
-import com.example.carmanagementbackend.model.Car;
-import com.example.carmanagementbackend.model.FuelEntry;
-import com.example.carmanagementbackend.model.FuelStats;
+import com.example.carmanagement.model.Car;
+import com.example.carmanagement.model.FuelEntry;
+import com.example.carmanagement.model.FuelStats;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

@@ -1,7 +1,7 @@
-package com.example.carmanagementbackend.servlet;
+package com.example.carmanagement.servlet;
 
-import com.example.carmanagementbackend.model.FuelStats;
-import com.example.carmanagementbackend.service.CarService;
+import com.example.carmanagement.model.FuelStats;
+import com.example.carmanagement.service.CarService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;

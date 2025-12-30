@@ -1,4 +1,4 @@
-package com.example.carmanagementbackend.model;
+package com.example.carmanagement.model;
 
 import java.util.ArrayList;
 import java.util.List;

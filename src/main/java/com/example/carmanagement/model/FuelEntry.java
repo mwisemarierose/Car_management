@@ -1,4 +1,4 @@
-package com.example.carmanagementbackend.model;
+package com.example.carmanagement.model;
 
 public class FuelEntry {
     private double liters;

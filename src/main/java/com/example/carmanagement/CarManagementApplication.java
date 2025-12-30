@@ -1,17 +1,17 @@
-package com.example.carmanagementbackend;
+package com.example.carmanagement;
 
-import com.example.carmanagementbackend.service.CarService;
-import com.example.carmanagementbackend.servlet.FuelStatsServlet;
+import com.example.carmanagement.service.CarService;
+import com.example.carmanagement.servlet.FuelStatsServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class CarManagementBackendApplication {
+public class CarManagementApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CarManagementBackendApplication.class, args);
+        SpringApplication.run(CarManagementApplication.class, args);
     }
 
     @Bean

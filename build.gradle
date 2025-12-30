@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-description = 'car-management-backend'
+description = 'car-management'
 
 java {
     toolchain {
@@ -27,10 +27,24 @@ dependencies {
     // Spring Boot Starter Tomcat (for servlet support)
     implementation 'org.springframework.boot:spring-boot-starter-tomcat'
 
+    // Gson for CLI JSON parsing
+    implementation 'com.google.code.gson:gson:2.10.1'
+
     // Test dependencies
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+task cliJar(type: Jar) {
+    archiveBaseName = 'car-management-cli'
+    manifest {
+        attributes 'Main-Class': 'com.example.carmanagement.cli.CliApplication'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

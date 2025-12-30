@@ -1,8 +1,8 @@
-package com.example.carmanagementbackend.controller;
+package com.example.carmanagement.controller;
 
-import com.example.carmanagementbackend.model.Car;
-import com.example.carmanagementbackend.model.FuelStats;
-import com.example.carmanagementbackend.service.CarService;
+import com.example.carmanagement.model.Car;
+import com.example.carmanagement.model.FuelStats;
+import com.example.carmanagement.service.CarService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

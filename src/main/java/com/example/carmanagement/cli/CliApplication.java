@@ -74,13 +74,13 @@ public class CliApplication {
 
         if (response.statusCode() == 201) {
             JsonObject car = gson.fromJson(response.body(), JsonObject.class);
-            System.out.println("✅ Car created successfully!");
-            System.out.println("Car ID: " + car.get("id").getAsLong());
+            System.out.println("Car created successfully!");
+            System.out.println("ID: " + car.get("id").getAsLong());
             System.out.println("Brand: " + car.get("brand").getAsString());
             System.out.println("Model: " + car.get("model").getAsString());
             System.out.println("Year: " + car.get("year").getAsInt());
         } else {
-            System.out.println("❌ Failed to create car. Status: " + response.statusCode());
+            System.out.println("Failed to create car. Status: " + response.statusCode());
         }
     }
 
@@ -117,14 +117,11 @@ public class CliApplication {
                 HttpResponse.BodyHandlers.ofString());
 
         if (response.statusCode() == 200) {
-            System.out.println("✅ Fuel entry added successfully!");
-            System.out.println("   Liters: " + liters + " L");
-            System.out.println("   Price: $" + price);
-            System.out.println("   Odometer: " + odometer + " km");
+            System.out.println("Fuel entry added successfully!");
         } else if (response.statusCode() == 404) {
-            System.out.println("❌ Car not found with ID: " + carId);
+            System.out.println("Car not found with ID: " + carId);
         } else {
-            System.out.println("❌ Failed to add fuel entry. Status: " + response.statusCode());
+            System.out.println("Failed to add fuel entry. Status: " + response.statusCode());
         }
     }
 
@@ -152,17 +149,17 @@ public class CliApplication {
             double totalCost = stats.get("totalCost").getAsDouble();
             double avgConsumption = stats.get("averageConsumption").getAsDouble();
 
-            System.out.println("═══════════════════════════════");
-            System.out.println("   Fuel Statistics - Car #" + carId);
-            System.out.println("═══════════════════════════════");
+            System.out.println();
+            System.out.println("Fuel Statistics for Car #" + carId);
+            System.out.println("-------------------------------");
             System.out.printf("Total fuel: %.1f L%n", totalFuel);
             System.out.printf("Total cost: %.2f%n", totalCost);
             System.out.printf("Average consumption: %.1f L/100km%n", avgConsumption);
-            System.out.println("═══════════════════════════════");
+            System.out.println();
         } else if (response.statusCode() == 404) {
-            System.out.println("❌ Car not found with ID: " + carId);
+            System.out.println("Car not found with ID: " + carId);
         } else {
-            System.out.println("❌ Failed to get stats. Status: " + response.statusCode());
+            System.out.println("Failed to get stats. Status: " + response.statusCode());
         }
     }
 
@@ -176,19 +173,16 @@ public class CliApplication {
     }
 
     private static void printUsage() {
-        System.out.println("╔════════════════════════════════════════╗");
-        System.out.println("║   Car Management CLI - Usage Guide    ║");
-        System.out.println("╚════════════════════════════════════════╝");
+        System.out.println("Car Management CLI");
         System.out.println();
-        System.out.println("Commands:");
+        System.out.println("Available commands:");
         System.out.println("  create-car --brand <brand> --model <model> --year <year>");
-        System.out.println("    Example: create-car --brand Toyota --model Corolla --year 2018");
-        System.out.println();
         System.out.println("  add-fuel --carId <id> --liters <liters> --price <price> --odometer <odometer>");
-        System.out.println("    Example: add-fuel --carId 1 --liters 40 --price 52.5 --odometer 45000");
-        System.out.println();
         System.out.println("  fuel-stats --carId <id>");
-        System.out.println("    Example: fuel-stats --carId 1");
         System.out.println();
+        System.out.println("Examples:");
+        System.out.println("  create-car --brand Toyota --model Corolla --year 2018");
+        System.out.println("  add-fuel --carId 1 --liters 40 --price 52.5 --odometer 45000");
+        System.out.println("  fuel-stats --carId 1");
     }
 }

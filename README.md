@@ -49,7 +49,7 @@ src/main/java/com/example/carmanagement/
 
 1. **Clone the repository**
    ```bash
-   git clone (https://github.com/mwisemarierose/Car_management.git)
+   git clone https://github.com/mwisemarierose/Car_management.git
    cd car-management-backend
    ```
 
